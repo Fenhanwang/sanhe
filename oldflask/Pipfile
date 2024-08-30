@@ -1,0 +1,24 @@
+[[source]]
+#url = "https://pypi.org/simple"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+flask = "*"
+pymongo = "*"
+bootstrap-flask = "*"
+Flask-WTF = "*"
+flask_login = "*"
+email_validator = "*"
+python-dateutil = "*" 
+
+[dev-packages]
+ipython = "*"
+pandas = "*"
+pytest = "*"
+
+[requires]
+python_version = "3.8"
+python_full_version = "3.8.10"

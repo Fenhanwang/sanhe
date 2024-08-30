@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">
+                Get My Token
+            </h1>
+            <p class="col-lg-10 fs-4">
+                Register Now if want Sanhe Superpower to enhance your application!  
+            </p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+
+            <form method="post" action="" class="p-4 p-md-5 border rounded-3 bg-light">
+
+                {{ form.hidden_tag() }}
+
+                <p class="fw-bold">
+                    {% if msg %}
+                        {{ msg | safe }}
+                    {% else %}
+                        Here is your token
+                    {% endif %}                                  
+                </p>
+
+                <br />
+
+                <div class="form-floating mb-3"> 
+                    {{ form.token(class="form-control", value=token_value) }}
+                    <label for="floatingInput">Token</label>
+                </div>
+                <br />
+                <!--
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div> -->
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Save</button>
+                <hr class="my-4">
+                <small class="text-muted">
+                    Dont have an account? <a href="{{ url_for('register') }}" class="text-right">Register</a>
+                </small>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
